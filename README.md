@@ -93,3 +93,14 @@ docker run --rm -v /var/path/to/data:/data -v /var/path/to/results:/results test
 docker run --rm -v /var/path/to/data:/data -v /var/path/to/results:/results predict "/result/dbpedia.bin" "/data/dbpedia.test" > "data/dbpedia.test.predict"
 ```
 See [classification-example.sh](examples/classification-example.sh) for an example using the **devel** tag.  Simply replace that with **binary** and remove the _./fastText_ argument to achieve the same result.
+
+
+# add python build
+# start docker and jupyter notebook
+docker run -p 8888:8888 --rm -it -v /tmp/data:/data -v /tmp/result:/result fasttext /bin/bash
+#in the docker propmt, run
+jupyter notebook --ip=0.0.0.0 --allow-root
+#in your browser:
+http:127.0.0.1:8888
+
+
